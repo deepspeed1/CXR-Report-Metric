@@ -4,6 +4,7 @@ beautifulsoup4==4.8.1
 bert-score==0.3.11
 fast-bleu==0.0.90
 lxml
+huggingface_hub
 numpy==1.18.2
 pandas==1.0.1
 python-Levenshtein
