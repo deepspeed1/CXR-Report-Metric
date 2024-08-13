@@ -24,9 +24,6 @@ hf_hub_download(
     repo_type = 'model',
     repo_id = DOWNLOAD_REPO)
 
-os.chdir(f'{cwd}/CXR-Report-Metric')
-# del calc_metric
-
 
 gt_reports = f'{cwd}/gt_reports.csv'
 predicted_reports = f'{cwd}/predicted_reports.csv'
