@@ -8,10 +8,10 @@ cwd = os.getcwd()
 
 DOWNLOAD_REPO = input('enter download repo id: ')
 
-login(input('enter hf token'))
+login(input('enter hf token: '))
 
-snapshot_download(repo_id = DOWNLOAD_REPO)
-
+hf_hub_download(repo_id = DOWNLOAD_REPO, filename = 'gt_reports.csv')
+hf_hub_download(repo_id = DOWNLOAD_REPO, filename = 'predicted_reports.csv')
 gt_reports = f'{cwd}/gt_reports.csv'
 predicted_reports = f'{cwd}/predicted_reports.csv'
 out_file = f'{cwd}/report_scores.csv'
