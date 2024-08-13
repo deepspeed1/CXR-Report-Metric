@@ -6,24 +6,11 @@ from huggingface_hub import hf_hub_download, login, HfApi, snapshot_download
 
 cwd = os.getcwd()
 
-DOWNLOAD_REPO = 'ahmedabdelwahed/RologyVLM-22k'
+DOWNLOAD_REPO = input('enter download repo is')
 
 login(input('enter hf token'))
 
-# gt_reports
-hf_hub_download(
-    filename = 'gt_reports.csv',
-    # local_dir = cwd,
-    repo_type = 'model',
-    repo_id = DOWNLOAD_REPO)
-
-# predicted_reports
-hf_hub_download(
-    filename = 'predicted_reports.csv',
-    # local_dir = cwd,
-    repo_type = 'model',
-    repo_id = DOWNLOAD_REPO)
-
+snapshot_download(repo_id = DOWNLOAD_REPO)
 
 gt_reports = f'{cwd}/gt_reports.csv'
 predicted_reports = f'{cwd}/predicted_reports.csv'
