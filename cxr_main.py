@@ -6,7 +6,7 @@ from huggingface_hub import hf_hub_download, login, HfApi, snapshot_download
 
 cwd = os.getcwd()
 
-DOWNLOAD_REPO = input('enter download repo is')
+DOWNLOAD_REPO = input('enter download repo id: ')
 
 login(input('enter hf token'))
 
