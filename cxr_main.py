@@ -8,7 +8,7 @@ cwd = os.getcwd()
 
 DOWNLOAD_REPO = 'ahmedabdelwahed/RologyVLM-22k'
 
-login('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')
+login(input('enter hf token'))
 
 # gt_reports
 hf_hub_download(
