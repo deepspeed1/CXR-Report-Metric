@@ -16,6 +16,7 @@ from CXRMetric.radgraph_evaluate_model import run_radgraph
 
 """Computes 4 individual metrics and a composite metric on radiology reports."""
 
+cwd = os.getcwd(
 
 CHEXBERT_PATH = config.CHEXBERT_PATH
 RADGRAPH_PATH = config.RADGRAPH_PATH
@@ -28,7 +29,7 @@ REPORT_COL_NAME = "report"
 STUDY_ID_COL_NAME = "study_id"
 COLS = ["radgraph_combined", "bertscore", "semb_score", "bleu_score"]
 
-cache_path = "cache/"
+cache_path = f"{cwd}/cache/"
 pred_embed_path = os.path.join(cache_path, "pred_embeddings.pt")
 gt_embed_path = os.path.join(cache_path, "gt_embeddings.pt")
 weights = {"bigram": (1/2., 1/2.)}
@@ -184,7 +185,7 @@ def calc_metric(gt_csv, pred_csv, out_csv, use_idf): # TODO: support single metr
     assert (gt[STUDY_ID_COL_NAME].equals(pred[STUDY_ID_COL_NAME]))
 
     # add blue column to the eval df
-    pred = add_bleu_col(gt, pred)
+    # pred = add_bleu_col(gt, pred)
 
     # add bertscore column to the eval df
     pred = add_bertscore_col(gt, pred, use_idf)
@@ -200,7 +201,7 @@ def calc_metric(gt_csv, pred_csv, out_csv, use_idf): # TODO: support single metr
     relations_path = os.path.join(cache_path, "relations_cache.json")
     run_radgraph(cache_gt_csv, cache_pred_csv, cache_path, RADGRAPH_PATH,
                  entities_path, relations_path)
-    pred = add_radgraph_col(pred, entities_path, relations_path)
+    #pred = add_radgraph_col(pred, entities_path, relations_path)
 
     # compute composite metric: RadCliQ-v0
     with open(COMPOSITE_METRIC_V0_PATH, "rb") as f:
