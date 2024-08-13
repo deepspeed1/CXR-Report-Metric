@@ -13,14 +13,14 @@ login('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')
 # gt_reports
 hf_hub_download(
     filename = 'gt_reports.csv',
-    local_dir = cwd,
+    # local_dir = cwd,
     repo_type = 'model',
     repo_id = DOWNLOAD_REPO)
 
 # predicted_reports
 hf_hub_download(
     filename = 'predicted_reports.csv',
-    local_dir = cwd,
+    # local_dir = cwd,
     repo_type = 'model',
     repo_id = DOWNLOAD_REPO)
 
