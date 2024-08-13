@@ -16,7 +16,7 @@ from CXRMetric.radgraph_evaluate_model import run_radgraph
 
 """Computes 4 individual metrics and a composite metric on radiology reports."""
 
-cwd = os.getcwd(
+cwd = os.getcwd()
 
 CHEXBERT_PATH = config.CHEXBERT_PATH
 RADGRAPH_PATH = config.RADGRAPH_PATH
